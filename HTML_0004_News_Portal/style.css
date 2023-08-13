@@ -1,0 +1,71 @@
+/* Resetowanie niektórych domyślnych stylów przeglądarki */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ogólne style */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: white;
+  color: #444;
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.news-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #333;
+}
