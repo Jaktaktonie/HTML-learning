@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przykładowa Strona z Newsami</title>
+  <link rel="stylesheet" href="style.css"> <!-- Dodaj tę linię, odwołując się do pliku CSS -->
+  <style>
+    /* Twoje style CSS */
+  </style>
+  <script>
+    let currentPage = 1;
+    const maxPerPage = 6; // Wyświetl 6 newsów na stronie
+
+    function showPage(pageNumber) {
+      const newsItems = document.querySelectorAll('.news-item');
+
+      for (let i = 0; i < newsItems.length; i++) {
+        newsItems[i].style.display = 'none';
+      }
+
+      for (let i = (pageNumber - 1) * maxPerPage; i < pageNumber * maxPerPage; i++) {
+        if (newsItems[i]) {
+          newsItems[i].style.display = 'block';
+        }
+      }
+    }
+
+    function changePage(pageNumber) {
+      currentPage = pageNumber;
+      showPage(currentPage);
+    }
+
+    window.onload = function() {
+      showPage(currentPage);
+    };
+  </script>
+</head>
+<body>
+<header>
+  <h1>Aktualności</h1>
+</header>
+<nav>
+  <a href="javascript:void(0);" onclick="changePage(1)">Aktualności</a>
+  <a href="javascript:void(0);" onclick="changePage(1)">Sesje</a>
+  <a href="javascript:void(0);" onclick="changePage(1)">Kadencje</a>
+  <a href="javascript:void(0);" onclick="changePage(1)">Protokoły</a>
+  <a href="javascript:void(0);" onclick="changePage(1)">Uchwały</a>
+</nav>
+<div class="container">
+  <div class="news">
+    <div class="news-item">
+      <img src="news1.jpg" alt="News 1">
+      <h2>News 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="news-item">
+      <img src="news2.jpg" alt="News 2">
+      <h2>News 2</h2>
+      <p>Nulla vitae elit libero, a pharetra augue.</p>
+    </div>
+    <div class="news-item">
+      <img src="news3.jpg" alt="News 3">
+      <h2>News 3</h2>
+      <p>Maecenas sed diam eget risus varius blandit.</p>
+    </div>
+    <div class="news-item">
+      <img src="news4.jpg" alt="News 4">
+      <h2>News 4</h2>
+      <p>Etiam porta sem malesuada magna mollis euismod.</p>
+    </div>
+    <div class="news-item">
+      <img src="news5.jpg" alt="News 5">
+      <h2>News 5</h2>
+      <p>Donec ullamcorper nulla non metus auctor fringilla.</p>
+    </div>
+    <div class="news-item">
+      <img src="news6.jpg" alt="News 6">
+      <h2>News 6</h2>
+      <p>Cras mattis consectetur purus sit amet fermentum.</p>
+    </div>
+    <div class="news-item">
+      <img src="news7.jpg" alt="News 7">
+      <h2>News 7</h2>
+      <p>Vestibulum id ligula porta felis euismod semper.</p>
+    </div>
+    <!-- Dodaj więcej newsów -->
+  </div>
+  <div class="pagination">
+    <a href="javascript:void(0);" onclick="changePage(1)">1</a>
+    <a href="javascript:void(0);" onclick="changePage(2)">2</a>
+    <!-- Dodaj więcej przycisków paginacji -->
+  </div>
+</div>
+</body>
+</html>
